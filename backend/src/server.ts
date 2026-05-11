@@ -1,8 +1,10 @@
+
+import 'dotenv/config';
 import { Server } from 'http';
 import app from './app';
-import config from './config';
-import { connectRedis } from './shared/redis/client';
-import { initSocket } from './shared/socket';
+import { config } from '@config/index';
+import { connectRedis } from '@shared/redis/client';
+import { initSocket } from '@shared/socket';
 
 async function bootstrap() {
   const server: Server = app.listen(config.port, () => {
