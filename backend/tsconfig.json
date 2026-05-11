@@ -14,8 +14,17 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
+      "@config/*": [
+        "src/config/*"
+      ],
+      "@common/*": [
+        "src/common/*"
+      ],
+      "@shared/*": [
+        "src/shared/*"
+      ],
+      "@modules/*": [
+        "src/modules/*"
       ]
     },
     "experimentalDecorators": true,
