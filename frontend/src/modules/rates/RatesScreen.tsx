@@ -24,11 +24,11 @@ const ROUTE_DATA = [
     terminal: 'Manaoag Central Terminal',
     terminalAddress: 'Soriano St, Manaoag, Pangasinan',
     stops: [
-      { name: 'Manaoag Terminal', info: 'Origin', time: '0 min' },
-      { name: 'Pao', info: '2.5 km', time: '8 min' },
-      { name: 'Bued', info: '4.2 km', time: '15 min' },
-      { name: 'Calasiao', info: '8.1 km', time: '25 min' },
-      { name: 'Dagupan City', info: 'Destination', time: '35 min' },
+      { name: 'Manaoag Terminal', info: 'Origin', time: '0 min', lat: '16.0436', lng: '120.4871' },
+      { name: 'Pao', info: '2.5 km', time: '8 min', lat: '16.0375', lng: '120.4500' },
+      { name: 'Bued', info: '4.2 km', time: '15 min', lat: '16.0400', lng: '120.4100' },
+      { name: 'Calasiao', info: '8.1 km', time: '25 min', lat: '16.0125', lng: '120.3600' },
+      { name: 'Dagupan City', info: 'Destination', time: '35 min', lat: '16.0433', lng: '120.3333' },
     ],
     price: '₱60.00',
     icon: 'van-passenger',
@@ -41,11 +41,11 @@ const ROUTE_DATA = [
     terminal: 'Public Market Terminal',
     terminalAddress: 'Poblacion, Manaoag',
     stops: [
-      { name: 'Manaoag Market', info: 'Origin', time: '0 min' },
-      { name: 'Sapang', info: '1.8 km', time: '5 min' },
-      { name: 'Laoac', info: '5.2 km', time: '12 min' },
-      { name: 'Nancayasan', info: '8.4 km', time: '20 min' },
-      { name: 'Urdaneta City', info: 'Destination', time: '28 min' },
+      { name: 'Manaoag Market', info: 'Origin', time: '0 min', lat: '16.0436', lng: '120.4871' },
+      { name: 'Sapang', info: '1.8 km', time: '5 min', lat: '16.0480', lng: '120.5000' },
+      { name: 'Laoac', info: '5.2 km', time: '12 min', lat: '16.0520', lng: '120.5300' },
+      { name: 'Nancayasan', info: '8.4 km', time: '20 min', lat: '15.9761', lng: '120.5711' },
+      { name: 'Urdaneta City', info: 'Destination', time: '28 min', lat: '15.9761', lng: '120.5711' },
     ],
     price: '₱35.00',
     icon: 'bus-side',
@@ -58,9 +58,9 @@ const ROUTE_DATA = [
     terminal: 'Binalonan Crossing',
     terminalAddress: 'McArthur Highway, Binalonan',
     stops: [
-      { name: 'Binalonan Crossing', info: 'Origin', time: '0 min' },
-      { name: 'Laoac Junction', info: '3.1 km', time: '10 min' },
-      { name: 'Manaoag Shrine', info: 'Destination', time: '18 min' },
+      { name: 'Binalonan Crossing', info: 'Origin', time: '0 min', lat: '16.0500', lng: '120.5900' },
+      { name: 'Laoac Junction', info: '3.1 km', time: '10 min', lat: '16.0520', lng: '120.5300' },
+      { name: 'Manaoag Shrine', info: 'Destination', time: '18 min', lat: '16.0436', lng: '120.4871' },
     ],
     price: '₱25.00',
     icon: 'bus-side',
@@ -73,16 +73,78 @@ const ROUTE_DATA = [
     terminal: 'Binalonan Bus Stop',
     terminalAddress: 'Poblacion, Binalonan',
     stops: [
-      { name: 'Binalonan', info: 'Origin', time: '0 min' },
-      { name: 'Pozorrubio', info: '12 km', time: '20 min' },
-      { name: 'Sison', info: '25 km', time: '40 min' },
-      { name: 'Camp 7', info: '52 km', time: '1h 15m' },
-      { name: 'Baguio City', info: 'Destination', time: '1h 30m' },
+      { name: 'Binalonan', info: 'Origin', time: '0 min', lat: '16.0500', lng: '120.5900' },
+      { name: 'Pozorrubio', info: '12 km', time: '20 min', lat: '16.1100', lng: '120.5400' },
+      { name: 'Sison', info: '25 km', time: '40 min', lat: '16.1700', lng: '120.5100' },
+      { name: 'Camp 7', info: '52 km', time: '1h 15m', lat: '16.3700', lng: '120.6000' },
+      { name: 'Baguio City', info: 'Destination', time: '1h 30m', lat: '16.4023', lng: '120.5963' },
     ],
     price: '₱120.00',
     icon: 'bus',
     color: theme.colors.iconBus
   },
+  {
+    id: '5',
+    title: 'Dagupan → San Carlos',
+    type: 'uv',
+    terminal: 'Dagupan CSI Terminal',
+    terminalAddress: 'Lucao District, Dagupan City',
+    stops: [
+      { name: 'Dagupan CSI', info: 'Origin', time: '0 min', lat: '16.0433', lng: '120.3333' },
+      { name: 'Calasiao Church', info: '3.5 km', time: '12 min', lat: '16.0125', lng: '120.3600' },
+      { name: 'San Carlos City', info: 'Destination', time: '30 min', lat: '15.9200', lng: '120.3500' },
+    ],
+    price: '₱45.00',
+    icon: 'van-passenger',
+    color: theme.colors.iconUV
+  },
+  {
+    id: '6',
+    title: 'Dagupan → Cubao',
+    type: 'bus',
+    terminal: 'Victory Liner Dagupan',
+    terminalAddress: 'Perez Blvd, Dagupan City',
+    stops: [
+      { name: 'Dagupan', info: 'Origin', time: '0 min', lat: '16.0433', lng: '120.3333' },
+      { name: 'Carmen', info: '45 km', time: '1h 10m', lat: '15.8800', lng: '120.5900' },
+      { name: 'Tarlac', info: '90 km', time: '2h 15m', lat: '15.4800', lng: '120.5900' },
+      { name: 'Cubao', info: 'Destination', time: '4h 30m', lat: '14.6200', lng: '121.0500' },
+    ],
+    price: '₱485.00',
+    icon: 'bus',
+    color: theme.colors.iconBus
+  },
+  {
+    id: '7',
+    title: 'Manaoag → Pozorrubio',
+    type: 'jeep',
+    terminal: 'Manaoag Junction',
+    terminalAddress: 'Poblacion, Manaoag',
+    stops: [
+      { name: 'Manaoag Junction', info: 'Origin', time: '0 min', lat: '16.0436', lng: '120.4871' },
+      { name: 'Inamotan', info: '4.2 km', time: '10 min', lat: '16.0700', lng: '120.5100' },
+      { name: 'Pozorrubio', info: 'Destination', time: '20 min', lat: '16.1100', lng: '120.5400' },
+    ],
+    price: '₱20.00',
+    icon: 'bus-side',
+    color: theme.colors.iconJeep
+  },
+  {
+    id: '8',
+    title: 'Urdaneta → Baguio',
+    type: 'bus',
+    terminal: 'Urdaneta Central Terminal',
+    terminalAddress: 'Alexander St, Urdaneta City',
+    stops: [
+      { name: 'Urdaneta', info: 'Origin', time: '0 min', lat: '15.9761', lng: '120.5711' },
+      { name: 'Binalonan', info: '10 km', time: '15 min', lat: '16.0500', lng: '120.5900' },
+      { name: 'Pozorrubio', info: '22 km', time: '35 min', lat: '16.1100', lng: '120.5400' },
+      { name: 'Baguio City', info: 'Destination', time: '1h 45m', lat: '16.4023', lng: '120.5963' },
+    ],
+    price: '₱110.00',
+    icon: 'bus',
+    color: theme.colors.iconBus
+  }
 ];
 
 const CATEGORIES = [
@@ -93,26 +155,48 @@ const CATEGORIES = [
   { id: 'trike', label: 'Tricycle', icon: 'rickshaw' },
 ];
 
+
+
 export const RatesScreen = () => {
   const [showLeftFade, setShowLeftFade] = React.useState(false);
   const [showRightFade, setShowRightFade] = React.useState(true);
   const [activeCategory, setActiveCategory] = React.useState('all');
-  const [searchQuery, setSearchQuery] = React.useState('');
   const [expandedRoute, setExpandedRoute] = React.useState<string | null>(null);
   const [mapRoute, setMapRoute] = React.useState<any | null>(null);
+  const [isHeaderSticky, setIsHeaderSticky] = React.useState(false);
+  
+  const horizontalScrollRef = React.useRef<ScrollView>(null);
+  const windowWidth = Dimensions.get('window').width;
 
   const handleScroll = (event: any) => {
     const { contentOffset, contentSize, layoutMeasurement } = event.nativeEvent;
-    setShowLeftFade(contentOffset.x > 10);
-    setShowRightFade(contentOffset.x < contentSize.width - layoutMeasurement.width - 10);
+    
+    // For fuel cards fade (horizontal scroll)
+    if (contentSize.width > layoutMeasurement.width) {
+      setShowLeftFade(contentOffset.x > 10);
+      setShowRightFade(contentOffset.x < contentSize.width - layoutMeasurement.width - 10);
+    }
+
+    // For sticky header detection (vertical scroll)
+    // Threshold is approximately the height of elements above the sticky header
+    // Location (~100) + Fuel Section (~200) + Transit Title (~80)
+    if (contentOffset.y !== undefined && contentSize.height > layoutMeasurement.height) {
+      setIsHeaderSticky(contentOffset.y > 320);
+    }
   };
 
-  const filteredRoutes = ROUTE_DATA.filter(route => {
-    const matchesCategory = activeCategory === 'all' || route.type === activeCategory;
-    const matchesSearch = route.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                          route.terminal.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  const handleCategoryPress = (categoryId: string, index: number) => {
+    setActiveCategory(categoryId);
+    horizontalScrollRef.current?.scrollTo({ x: index * windowWidth, animated: true });
+  };
+
+  const handleHorizontalScroll = (event: any) => {
+    const offsetX = event.nativeEvent.contentOffset.x;
+    const index = Math.round(offsetX / windowWidth);
+    if (CATEGORIES[index]) {
+      setActiveCategory(CATEGORIES[index].id);
+    }
+  };
 
   const renderRight = () => (
     <TouchableOpacity style={styles.notificationBtn}>
@@ -123,10 +207,18 @@ export const RatesScreen = () => {
 
   return (
     <Screen title="RATES" rightComponent={renderRight()}>
-      <ScrollView style={styles.contentScroll} showsVerticalScrollIndicator={false}>
+      <ScrollView 
+        style={styles.contentScroll} 
+        showsVerticalScrollIndicator={false}
+        stickyHeaderIndices={[3]}
+        onScroll={handleScroll}
+        scrollEventThrottle={16}
+      >
+
+
         <View style={styles.sectionContainer}>
-          {/* 1. Your Location (Very Top) */}
-          <View style={[styles.locationCard, { marginTop: theme.spacing.md }]}>
+          {/* 1. Your Location */}
+          <View style={[styles.locationCard, { marginTop: theme.spacing.sm }]}>
             <View style={styles.locationIconContainer}>
               <Ionicons name="location" size={20} color={theme.colors.primary} />
             </View>
@@ -140,7 +232,7 @@ export const RatesScreen = () => {
             </TouchableOpacity>
           </View>
 
-          {/* 2. Fuel Prices (Utility Section) */}
+          {/* 2. Fuel Prices */}
           <View style={[styles.sectionHeader, { marginTop: theme.spacing.sm }]}>
             <Text style={styles.sectionTitle}>Fuel Prices Today</Text>
             <View style={styles.sectionHeaderRight}>
@@ -150,7 +242,7 @@ export const RatesScreen = () => {
           </View>
         </View>
 
-        <View style={styles.fuelScrollContainer}>
+        <View style={[styles.fuelScrollContainer, { marginTop: 4 }]}>
           <ScrollView
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -187,161 +279,194 @@ export const RatesScreen = () => {
           )}
         </View>
 
-        {/* 3. Search & Routes Section (Find a better UX) */}
-        <View style={styles.routesSectionContainer}>
+        {/* Transit Routes Section */}
+        <View style={[styles.routesSectionContainer, { marginBottom: 8 }]}>
           <View style={styles.sectionHeader}>
             <View>
               <Text style={styles.sectionTitle}>Transit Routes</Text>
               <Text style={styles.sectionSubtitle}>Find your transportation & terminals</Text>
             </View>
           </View>
+        </View>
 
-          <View style={styles.searchBar}>
-            <Ionicons name="search" size={20} color={theme.colors.textMuted} />
-            <TextInput
-              placeholder="Search routes or terminals..."
-              placeholderTextColor={theme.colors.textMuted}
-              style={styles.searchInput}
-              value={searchQuery}
-              onChangeText={setSearchQuery}
-            />
-            {searchQuery !== '' && (
-              <TouchableOpacity onPress={() => setSearchQuery('')}>
-                <Ionicons name="close-circle" size={18} color={theme.colors.textMuted} />
-              </TouchableOpacity>
-            )}
-          </View>
-
+        {/* Sticky Search & Category Bar */}
+        <View style={[styles.stickyHeader, isHeaderSticky && styles.stickyHeaderActive]}>
           <ScrollView 
             horizontal 
             showsHorizontalScrollIndicator={false} 
-            contentContainerStyle={styles.categoryScroll}
-            style={{ marginBottom: 16 }}
+            contentContainerStyle={[styles.categoryScroll, isHeaderSticky && { gap: 0 }]}
+            style={{ marginBottom: isHeaderSticky ? 0 : 12 }}
           >
-            {CATEGORIES.map(cat => (
-              <TouchableOpacity 
-                key={cat.id} 
-                onPress={() => setActiveCategory(cat.id)}
-                style={[
-                  styles.categoryChip, 
-                  activeCategory === cat.id && styles.categoryChipActive
-                ]}
-              >
-                <MaterialCommunityIcons 
-                  name={cat.icon as any} 
-                  size={16} 
-                  color={activeCategory === cat.id ? '#fff' : theme.colors.textMuted} 
-                />
-                <Text style={[
-                  styles.categoryLabel, 
-                  activeCategory === cat.id && styles.categoryLabelActive
-                ]}>{cat.label}</Text>
-              </TouchableOpacity>
-            ))}
-          </ScrollView>
-
-          <View style={styles.transportList}>
-            {filteredRoutes.map((route) => {
-              const isExpanded = expandedRoute === route.id;
-              return (
-                <View key={route.id} style={styles.routeCardContainer}>
+            {CATEGORIES.map((cat, index) => {
+              const isActive = activeCategory === cat.id;
+              
+              if (isHeaderSticky) {
+                return (
                   <TouchableOpacity 
-                    style={[styles.routeCard, isExpanded && styles.routeCardExpanded]} 
-                    activeOpacity={0.8}
-                    onPress={() => setExpandedRoute(isExpanded ? null : route.id)}
+                    key={cat.id} 
+                    onPress={() => handleCategoryPress(cat.id, index)}
+                    style={[styles.categoryTab, { opacity: isActive ? 1 : 0.6 }]}
                   >
-                    <View style={[styles.routeIconContainer, { backgroundColor: route.color + '15' }]}>
-                      <MaterialCommunityIcons name={route.icon as any} size={24} color={route.color} />
-                    </View>
-                    <View style={styles.routeInfo}>
-                      <Text style={styles.routeTitle}>{route.title}</Text>
-                      <View style={styles.terminalRow}>
-                        <Ionicons name="location-outline" size={12} color={theme.colors.textMuted} />
-                        <Text style={styles.routeTerminal}>{route.terminal}</Text>
-                      </View>
-                    </View>
-                    <View style={styles.routePriceContainer}>
-                      <Text style={[styles.routePrice, { color: route.color }]}>{route.price}</Text>
-                      <Ionicons 
-                        name={isExpanded ? "chevron-up" : "chevron-forward"} 
-                        size={18} 
-                        color={theme.colors.textMuted} 
-                      />
-                    </View>
+                    <MaterialCommunityIcons 
+                      name={cat.icon as any} 
+                      size={16} 
+                      color={isActive ? theme.colors.primary : theme.colors.textMuted} 
+                    />
+                    <Text style={[
+                      styles.categoryTabText, 
+                      isActive && styles.categoryTabTextActive
+                    ]}>{cat.label}</Text>
+                    {isActive && <View style={styles.activeTabIndicator} />}
                   </TouchableOpacity>
+                );
+              }
 
-                  {isExpanded && (
-                    <View style={styles.expandedContent}>
-                      <View style={styles.terminalDetails}>
-                        <Text style={styles.detailsLabel}>TERMINAL LOCATION</Text>
-                        <Text style={styles.terminalAddress}>{route.terminalAddress}</Text>
-                        <View style={styles.actionButtonsRow}>
-                          <TouchableOpacity style={styles.directionsBtn}>
-                            <Ionicons name="navigate-outline" size={14} color="#fff" />
-                            <Text style={styles.directionsBtnText}>Directions</Text>
-                          </TouchableOpacity>
+              return (
+                <TouchableOpacity 
+                  key={cat.id} 
+                  onPress={() => handleCategoryPress(cat.id, index)}
+                  style={[
+                    styles.categoryChip, 
+                    isActive && styles.categoryChipActive
+                  ]}
+                >
+                  <MaterialCommunityIcons 
+                    name={cat.icon as any} 
+                    size={16} 
+                    color={isActive ? '#fff' : theme.colors.textMuted} 
+                  />
+                  <Text style={[
+                    styles.categoryLabel, 
+                    isActive && styles.categoryLabelActive
+                  ]}>{cat.label}</Text>
+                </TouchableOpacity>
+              );
+            })}
+          </ScrollView>
+        </View>
+
+        <View style={styles.pagerContainer}>
+          <ScrollView
+            ref={horizontalScrollRef}
+            horizontal
+            pagingEnabled
+            showsHorizontalScrollIndicator={false}
+            onMomentumScrollEnd={handleHorizontalScroll}
+            scrollEventThrottle={16}
+          >
+            {CATEGORIES.map((category) => {
+              const routes = ROUTE_DATA.filter(route => 
+                category.id === 'all' || route.type === category.id
+              );
+              
+              return (
+                <View key={category.id} style={[styles.pagerPage, { width: windowWidth }]}>
+                  <View style={[styles.transportList, isHeaderSticky && { paddingTop: 24 }]}>
+                    {routes.map((route) => {
+                      const isExpanded = expandedRoute === route.id;
+                      return (
+                        <View key={route.id} style={styles.routeCardContainer}>
                           <TouchableOpacity 
-                            style={styles.mapViewBtn}
-                            onPress={() => setMapRoute(route)}
+                            style={[styles.routeCard, isExpanded && styles.routeCardExpanded]} 
+                            activeOpacity={0.8}
+                            onPress={() => setExpandedRoute(isExpanded ? null : route.id)}
                           >
-                            <Ionicons name="map-outline" size={14} color={theme.colors.primary} />
-                            <Text style={styles.mapViewBtnText}>Show Map</Text>
+                            <View style={[styles.routeIconContainer, { backgroundColor: route.color + '15' }]}>
+                              <MaterialCommunityIcons name={route.icon as any} size={24} color={route.color} />
+                            </View>
+                            <View style={styles.routeInfo}>
+                              <Text style={styles.routeTitle}>{route.title}</Text>
+                              <View style={styles.terminalRow}>
+                                <Ionicons name="location-outline" size={12} color={theme.colors.textMuted} />
+                                <Text style={styles.routeTerminal}>{route.terminal}</Text>
+                              </View>
+                            </View>
+                            <View style={styles.routePriceContainer}>
+                              <Text style={[styles.routePrice, { color: route.color }]}>{route.price}</Text>
+                              <Ionicons 
+                                name={isExpanded ? "chevron-up" : "chevron-forward"} 
+                                size={18} 
+                                color={theme.colors.textMuted} 
+                              />
+                            </View>
                           </TouchableOpacity>
-                        </View>
-                      </View>
 
-                      <View style={styles.stopsSection}>
-                        <View style={styles.stopsHeader}>
-                          <Text style={styles.detailsLabel}>STATION SEQUENCE</Text>
-                          <Text style={styles.stopsCount}>{route.stops.length} STOPS</Text>
-                        </View>
-                        
-                        <View style={styles.timeline}>
-                          {route.stops.map((stop, sIdx) => {
-                            const isFirst = sIdx === 0;
-                            const isLast = sIdx === route.stops.length - 1;
-                            return (
-                              <View key={stop.name} style={styles.timelineItem}>
-                                <View style={styles.timelineMarker}>
-                                  <View style={styles.markerDotContainer}>
-                                    <View style={[
-                                      styles.markerDot, 
-                                      isFirst || isLast ? { backgroundColor: route.color, width: 14, height: 14, borderRadius: 7 } : { borderWidth: 2, borderColor: route.color }
-                                    ]}>
-                                      {isFirst && <Ionicons name="play" size={8} color="#fff" style={{ marginLeft: 1 }} />}
-                                      {isLast && <Ionicons name="flag" size={8} color="#fff" />}
-                                    </View>
-                                  </View>
-                                  {!isLast && <View style={[styles.markerLine, { backgroundColor: route.color + '40' }]} />}
-                                </View>
-                                
-                                <View style={styles.stopInfo}>
-                                  <View style={styles.stopTextRow}>
-                                    <Text style={[
-                                      styles.stopName,
-                                      (isFirst || isLast) && styles.stopNamePrimary
-                                    ]}>{stop.name}</Text>
-                                    <Text style={styles.stopTime}>{stop.time}</Text>
-                                  </View>
-                                  <Text style={styles.stopDetailText}>{stop.info}</Text>
+                          {isExpanded && (
+                            <View style={styles.expandedContent}>
+                              <View style={styles.terminalDetails}>
+                                <Text style={styles.detailsLabel}>TERMINAL LOCATION</Text>
+                                <Text style={styles.terminalAddress}>{route.terminalAddress}</Text>
+                                <View style={styles.actionButtonsRow}>
+                                  <TouchableOpacity style={styles.directionsBtn}>
+                                    <Ionicons name="navigate-outline" size={14} color="#fff" />
+                                    <Text style={styles.directionsBtnText}>Directions</Text>
+                                  </TouchableOpacity>
+                                  <TouchableOpacity 
+                                    style={styles.mapViewBtn}
+                                    onPress={() => setMapRoute(route)}
+                                  >
+                                    <Ionicons name="map-outline" size={14} color={theme.colors.primary} />
+                                    <Text style={styles.mapViewBtnText}>Show Map</Text>
+                                  </TouchableOpacity>
                                 </View>
                               </View>
-                            );
-                          })}
+
+                              <View style={styles.stopsSection}>
+                                <View style={styles.stopsHeader}>
+                                  <Text style={styles.detailsLabel}>STATION SEQUENCE</Text>
+                                  <Text style={styles.stopsCount}>{route.stops.length} STOPS</Text>
+                                </View>
+                                
+                                <View style={styles.timeline}>
+                                  {route.stops.map((stop, sIdx) => {
+                                    const isFirst = sIdx === 0;
+                                    const isLast = sIdx === route.stops.length - 1;
+                                    return (
+                                      <View key={stop.name} style={styles.timelineItem}>
+                                        <View style={styles.timelineMarker}>
+                                          <View style={styles.markerDotContainer}>
+                                            <View style={[
+                                              styles.markerDot, 
+                                              isFirst || isLast ? { backgroundColor: route.color, width: 14, height: 14, borderRadius: 7 } : { borderWidth: 2, borderColor: route.color }
+                                            ]}>
+                                              {isFirst && <Ionicons name="play" size={8} color="#fff" style={{ marginLeft: 1 }} />}
+                                              {isLast && <Ionicons name="flag" size={8} color="#fff" />}
+                                            </View>
+                                          </View>
+                                          {!isLast && <View style={[styles.markerLine, { backgroundColor: route.color + '40' }]} />}
+                                        </View>
+                                        
+                                        <View style={styles.stopInfo}>
+                                          <View style={styles.stopTextRow}>
+                                            <Text style={[
+                                              styles.stopName,
+                                              (isFirst || isLast) && styles.stopNamePrimary
+                                            ]}>{stop.name}</Text>
+                                            <Text style={styles.stopTime}>{stop.time}</Text>
+                                          </View>
+                                          <Text style={styles.stopDetailText}>{stop.info}</Text>
+                                        </View>
+                                      </View>
+                                    );
+                                  })}
+                                </View>
+                              </View>
+                            </View>
+                          )}
                         </View>
+                      );
+                    })}
+                    {routes.length === 0 && (
+                      <View style={styles.emptyState}>
+                        <Ionicons name="search-outline" size={48} color={theme.colors.border} />
+                        <Text style={styles.emptyStateText}>No routes found for this category.</Text>
                       </View>
-                    </View>
-                  )}
+                    )}
+                  </View>
                 </View>
               );
             })}
-            {filteredRoutes.length === 0 && (
-              <View style={styles.emptyState}>
-                <Ionicons name="search-outline" size={48} color={theme.colors.border} />
-                <Text style={styles.emptyStateText}>No routes found matching your search.</Text>
-              </View>
-            )}
-          </View>
+          </ScrollView>
         </View>
 
         <View style={styles.sectionContainer}>
@@ -454,24 +579,7 @@ const styles = StyleSheet.create({
   },
   routesSectionContainer: {
     paddingHorizontal: theme.spacing.lg,
-    marginTop: 32,
-  },
-  searchBar: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: theme.colors.surface,
-    borderRadius: theme.borderRadius.md,
-    paddingHorizontal: 12,
-    height: 48,
-    borderWidth: 1,
-    borderColor: theme.colors.border,
-    marginBottom: 12,
-  },
-  searchInput: {
-    flex: 1,
-    marginLeft: 10,
-    fontSize: 15,
-    color: theme.colors.text,
+    marginTop: 16,
   },
   categoryScroll: {
     gap: 8,
@@ -492,12 +600,15 @@ const styles = StyleSheet.create({
   },
   categoryLabel: {
     fontSize: 13,
-    fontWeight: '600',
+    fontWeight: '500',
     color: theme.colors.textMuted,
     marginLeft: 6,
+    opacity: 0.7,
   },
   categoryLabelActive: {
     color: '#fff',
+    fontWeight: '700',
+    opacity: 1,
   },
   sectionContainer: {
     paddingHorizontal: theme.spacing.lg,
@@ -1009,5 +1120,59 @@ const styles = StyleSheet.create({
     fontSize: 10,
     color: theme.colors.textMuted,
     marginTop: 2,
+  },
+  stickyHeader: {
+    backgroundColor: theme.colors.background,
+    paddingHorizontal: theme.spacing.md,
+    paddingBottom: 4,
+    paddingTop: 2,
+    zIndex: 10,
+  },
+  stickyHeaderActive: {
+    paddingBottom: 0,
+    borderBottomWidth: 1,
+    borderBottomColor: theme.colors.border + '15',
+    backgroundColor: theme.colors.background,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.03,
+    shadowRadius: 2,
+    elevation: 2,
+  },
+  categoryTab: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+    position: 'relative',
+  },
+  categoryTabText: {
+    fontSize: 13,
+    fontWeight: '500',
+    color: theme.colors.textMuted,
+    marginLeft: 6,
+  },
+  categoryTabTextActive: {
+    color: theme.colors.primary,
+    fontWeight: '700',
+  },
+  activeTabIndicator: {
+    position: 'absolute',
+    bottom: -2,
+    left: 10,
+    right: 10,
+    height: 3,
+    backgroundColor: theme.colors.primary,
+    borderRadius: 3,
+  },
+  pagerContainer: {
+    flex: 1,
+  },
+  pagerPage: {
+    paddingHorizontal: theme.spacing.lg,
+  },
+  transportList: {
+    marginTop: 16,
+    paddingBottom: 40,
   },
 });

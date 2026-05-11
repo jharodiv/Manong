@@ -3,28 +3,40 @@ import { StyleSheet, View, Text } from 'react-native';
 import MapView, { Marker, Polyline, PROVIDER_GOOGLE } from 'react-native-maps';
 
 export const RouteMap = ({ route }: { route: any }) => {
-  if (!route) return null;
+  if (!route || !route.stops) return null;
+
+  const mapStyle = [
+    {
+      "featureType": "poi",
+      "stylers": [{ "visibility": "off" }]
+    },
+    {
+      "featureType": "transit",
+      "stylers": [{ "visibility": "off" }]
+    }
+  ];
 
   return (
     <MapView
       provider={PROVIDER_GOOGLE}
       style={styles.map}
+      customMapStyle={mapStyle}
       initialRegion={{
-        latitude: route.stops[0].lat,
-        longitude: route.stops[0].lng,
+        latitude: parseFloat(route.stops[0].lat),
+        longitude: parseFloat(route.stops[0].lng),
         latitudeDelta: 0.1,
         longitudeDelta: 0.1,
       }}
     >
       <Polyline
-        coordinates={route.stops.map((s: any) => ({ latitude: s.lat, longitude: s.lng }))}
+        coordinates={route.stops.map((s: any) => ({ latitude: parseFloat(s.lat), longitude: parseFloat(s.lng) }))}
         strokeColor={route.color}
         strokeWidth={4}
       />
       {route.stops.map((stop: any, index: number) => (
         <Marker
           key={index}
-          coordinate={{ latitude: stop.lat, longitude: stop.lng }}
+          coordinate={{ latitude: parseFloat(stop.lat), longitude: parseFloat(stop.lng) }}
           title={stop.name}
         >
           <View style={[styles.mapMarker, { backgroundColor: route.color }]}>
