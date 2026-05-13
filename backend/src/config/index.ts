@@ -1,3 +1,5 @@
+import { StringValue } from 'ms';
+
 
 function getEnvVariable(key: string): string {
   const value = process.env[key];
@@ -10,17 +12,17 @@ function getEnvVariable(key: string): string {
 }
 
 export const config = {
-  env: process.env.NODE_ENV || 'development',
+  //env: process.env.NODE_ENV || 'development',
   port: process.env.PORT || '5000',
   databaseUrl: getEnvVariable('DATABASE_URL'),
   redis: {
     url: process.env.REDIS_URL || 'redis://localhost:6379'
   },
   jwt: {
-    accessSecret: getEnvVariable('JWT_SECRET_ACCESS'),
-    accessExpiration: process.env.JWT_ACCESS_EXPIRATION || '15m',
+    accessSecret: getEnvVariable('JWT_ACCESS_SECRET'),
+    accessExpiration: (process.env.JWT_ACCESS_EXPIRATION || '15m') as StringValue,
 
-    refreshSecret: getEnvVariable('JWT_REFRESH_ACCESS'),
-    refreshExpiration: process.env.JWT_REFRESH_EXPIRATION || '7d',
+    refreshSecret: getEnvVariable('JWT_REFRESH_SECRET'),
+    refreshExpiration: (process.env.JWT_REFRESH_EXPIRATION || '7d') as StringValue,
   }
 }

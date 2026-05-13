@@ -1,4 +1,3 @@
-
 import 'dotenv/config';
 import { Server } from 'http';
 import app from './app';

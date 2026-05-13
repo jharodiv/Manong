@@ -12,20 +12,23 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
       "@config/*": [
-        "src/config/*"
+        "config/*"
       ],
       "@common/*": [
-        "src/common/*"
+        "common/*"
       ],
       "@shared/*": [
-        "src/shared/*"
+        "shared/*"
       ],
-      "@modules/*": [
-        "src/modules/*"
-      ]
+      "@user/*": [
+        "modules/user/*"
+      ],
+      "@limiter/*": [
+        "limiter/*"
+      ],
     },
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true

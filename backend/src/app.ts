@@ -1,10 +1,12 @@
-import cors from 'cors';
+import cors from 'cors'; //why may cors? do we need it?
 import express, { Application, NextFunction, Request, Response } from 'express';
 import helmet from 'helmet';
 import httpStatus from 'http-status-codes';
 import morgan from 'morgan';
+
 import globalErrorHandler from './shared/middlewares/globalErrorHandler';
 
+import { serverLimiter } from "@limiter/server/server.limiter";
 import routes from './routes';
 
 const app: Application = express();
@@ -17,7 +19,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/api/v1', routes);
+app.use('/api/v1', serverLimiter, routes);
 
 app.get('/', (req: Request, res: Response) => {
   res.status(httpStatus.OK).json({
